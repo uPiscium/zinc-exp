@@ -3,9 +3,7 @@ FROM ubuntu:latest
 RUN apt-get update
 RUN apt-get install -y \
     curl \
-    vim \
     gcc \
-    g++ \
     make \
     unar \
     && rm -rf /var/lib/apt/lists/*
