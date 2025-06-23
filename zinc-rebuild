@@ -1,0 +1,7 @@
+#!/bin/sh
+
+PWD=$(pwd)
+cd /ZINC-exp/gengo2002/zinc-0/ || exit
+make clean
+make znc
+cd "$PWD" || exit

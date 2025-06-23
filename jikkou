@@ -1,0 +1,13 @@
+#!/bin/sh
+ZINC_FILE=$1
+if [ -z "$ZINC_FILE" ]; then
+  echo "Usage: jikkou <filename>"
+  exit 1
+fi
+
+# Support for .* files
+FILENAME=$(echo "$ZINC_FILE" | sed 's/^\.\///')
+
+znc < "$ZINC_FILE" > "$FILENAME".s
+znas < "$FILENAME".s > "$FILENAME".p3
+p386 "$FILENAME".p3
